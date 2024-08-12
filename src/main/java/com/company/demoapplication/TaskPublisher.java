@@ -55,7 +55,7 @@ class TaskPublisher {
     }
 
     private static List<String> listImagesOnS3() {
-        List<S3ObjectSummary> images = Main.s3Client().listObjectsV2(new ListObjectsV2Request().withBucketName(Main.bucketName).withPrefix(Main.sampleImagesFolder)).getObjectSummaries();
+        List<S3ObjectSummary> images = Main.s3Client().listObjects(new ListObjectsRequest().withBucketName(Main.bucketName).withPrefix(Main.sampleImagesFolder)).getObjectSummaries();
         return images.stream()
                    .filter(summary -> !summary.getKey().trim().equals(Main.sampleImagesFolder))
                    .map(summary -> summary.getKey().trim())
