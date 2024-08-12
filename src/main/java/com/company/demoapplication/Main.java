@@ -68,7 +68,7 @@ public class Main {
             reuseLogger = true;
         } else {
             logger().error("Invalid arguments: '" + String.join(" ", args) + "'. Valid arguments are: with-issues or without-issues.");
-            System.exit(-1);
+            System.exit(0);
         }
 
         // Publisher
