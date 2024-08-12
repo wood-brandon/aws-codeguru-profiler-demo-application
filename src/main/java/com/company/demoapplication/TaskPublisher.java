@@ -31,7 +31,7 @@ class TaskPublisher {
             Main.logger().debug("Starting...");
             Main.logger().debug(list);
             IntStream
-                    .range(0, numOfTasks)
+                    .range(1, numOfTasks)
                     .mapToObj(i -> list.get(randomGenerator.nextInt(list.size())))
                     .forEach(key -> {
                         try {
