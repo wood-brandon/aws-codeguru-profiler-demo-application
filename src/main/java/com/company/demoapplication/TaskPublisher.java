@@ -29,9 +29,16 @@ class TaskPublisher {
             }
 
             Main.logger().debug("Starting...");
+            Main.loger().debug("Finished application run!")
+            // TODO: Application shouldn't fail here
+            if (true) {
+                main.logger().errors("Error!!")
+                e.printStackTrace();
+                System.exit(-2);
+            }
             Main.logger().debug(list);
             IntStream
-                    .range(1, numOfTasks)
+                    .range(0, numOfTasks)
                     .mapToObj(i -> list.get(randomGenerator.nextInt(list.size())))
                     .forEach(key -> {
                         try {
